@@ -13,6 +13,15 @@
         color: #fff;
       }
 
+      .header {
+        text-align: center;
+      }
+
+      .logo {
+        max-width: 200px;
+        margin-bottom: 10px;
+      }
+
       .container {
         max-width: 600px;
         margin: 0 auto;
@@ -116,11 +125,31 @@
           transform: translateY(0);
         }
       }
+
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #ffff;
+      }
+
+      .footer a {
+        color: #ffff;
+        text-decoration: none;
+        /* visibility: hidden; */
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Cricket Score Board</h1>
+      <h2 style="color: black">Aloshiri Club Cricket Tournament - 2024</h2>
+
+      <div class="header">
+        <img
+          src="images/logo-aloshiri.jpg"
+          alt="Alo Shiri Club Logo"
+          class="logo"
+        />
+      </div>
 
       <div id="score" class="fade-in">
         Score: <span id="runs">0</span>/<span id="wickets">0</span>
@@ -130,10 +159,12 @@
     </div>
 
     <div class="container">
+      <button onclick="noRun(0)" class="fade-in">0 Run</button>
       <button onclick="addRuns(1)" class="fade-in">1 Run</button>
       <button onclick="addRuns(2)" class="fade-in">2 Runs</button>
       <button onclick="addRuns(3)" class="fade-in">3 Runs</button>
       <button onclick="addRuns(4)" class="fade-in">4 Runs</button>
+      <button onclick="addRuns(5)" class="fade-in">5 Runs</button>
       <button onclick="addRuns(6)" class="fade-in">6 Runs</button>
       <button onclick="noBall()" class="fade-in">No Ball</button>
       <button onclick="wide()" class="fade-in">Wide</button>
@@ -141,11 +172,27 @@
       <button onclick="reset()" class="fade-in">Reset</button>
     </div>
 
+    <div class="footer">
+      <p>
+        Developed by Tech Hunt |
+
+        <a href="https://www.tech-hunt.org" target="_blank"
+          >www.tech-hunt.org</a
+        >
+      </p>
+    </div>
+
     <script>
       let runs = 0;
       let wickets = 0;
       let overs = 0;
       let balls = 0;
+
+      function noRun() {
+        runs;
+        balls++;
+        updateScore();
+      }
 
       function addRuns(run) {
         runs += run;
@@ -178,7 +225,7 @@
 
       function noBall() {
         runs++;
-        balls++;
+
         updateScore();
       }
 
